@@ -1,0 +1,67 @@
+html {
+    margin: 0;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+}
+
+body {
+    background-color: #9ae2b6;
+}
+
+h2 {
+    margin-bottom: 50px;
+}
+
+.game-board {
+    display: flex;
+}
+
+.ai {
+    background: #BADA55;
+    width: 33%;
+    height: 50px;
+    
+}
+
+.player {
+    background: #a1ff34;
+    width: 33%;
+    height: 50px;
+}
+
+.buttons {
+    width: 33%;
+}
+
+button {
+    width: 70%;
+    margin-bottom: 50px;
+    font-size: 40px;
+    font-weight: 100;
+    font-family: 'Indie Flower', cursive;
+    border: none;
+    background: #6cb2b5;
+    color: #FFFFFF;
+    transition: all 150ms linear;
+    box-shadow: 0 1px 5px 0 gray;
+    border: 5px solid #4f898c;
+    
+    border-radius: 45px 10px 45px 10px;
+}
+
+button:active {
+    position: relative;
+    top: 2px;
+    opacity: .75 !important;
+}
+
+button:hover {
+   transition: all 250ms linear;
+
+   opacity: .85;
+}
+
+.points {
+    font-size: 2em;
+    margin-top: 0px;
+}

@@ -8,8 +8,21 @@ body {
     background-color: #9ae2b6;
 }
 
+h1 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+
 h2 {
     margin-bottom: 50px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+h3 {
+    color: white;
+    text-shadow: 1px 1px 1px black;    
 }
 
 .game-board {
@@ -17,16 +30,12 @@ h2 {
 }
 
 .ai {
-    background: #BADA55;
     width: 33%;
-    height: 50px;
     
 }
 
 .player {
-    background: #a1ff34;
     width: 33%;
-    height: 50px;
 }
 
 .buttons {
@@ -35,7 +44,7 @@ h2 {
 
 button {
     width: 70%;
-    margin-bottom: 50px;
+    margin: 25px 0;
     font-size: 40px;
     font-weight: 100;
     font-family: 'Indie Flower', cursive;
@@ -45,6 +54,7 @@ button {
     transition: all 150ms linear;
     box-shadow: 0 1px 5px 0 gray;
     border: 5px solid #4f898c;
+    text-shadow: 1px 1px 1px black;
     
     border-radius: 45px 10px 45px 10px;
 }
@@ -64,4 +74,15 @@ button:hover {
 .points {
     font-size: 2em;
     margin-top: 0px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+h4 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    font-size: 30px;
 }

@@ -5,7 +5,7 @@ let aiPoints = 0;
 // computers move returning random value and load image on page 
 function aiChoice() {
     let aiWeapons = ['r', 'p', 's'];
-    let aiPlay = aiWeapons[Math.floor(Math.random() * 3)];
+    let aiPlay = aiWeapons[Math.floor(Math.random() * aiWeapons.length)];
     
     if (aiPlay === 'r') {
         document.getElementById('aiImg').innerHTML = "<img src='assets/rock.png' alt='rock'>";
@@ -28,19 +28,19 @@ document.getElementById('rockBtn').onclick = function () {
     
     aiChoice();
     
-    if (aiChoice()=== "rock" ) {
+    if (aiChoice()=== "rock") {
         console.log("TIE");  
         document.getElementById('roundDescription').innerHTML = "Tie!"
     }
     else if (aiChoice() === "paper") {
         console.log("AI WON");
         aiPoints += 1;
-        document.getElementById('roundDescription').innerHTML = "Paper beats Rock!"
+        document.getElementById('roundDescription').innerHTML = "Paper beats Rock!";
     }
     else if (aiChoice() === "scissors") {
         console.log("YOU WON");
         playerPoints += 1;
-        document.getElementById('roundDescription').innerHTML = "Rock beats Scissors!"
+        document.getElementById('roundDescription').innerHTML = "Rock beats Scissors!";
     }
     
     upgradePoints();
@@ -64,7 +64,7 @@ document.getElementById('paperBtn').onclick = function () {
     else {
         console.log("AI WON");
         aiPoints += 1;
-        document.getElementById('roundDescription').innerHTML = "Scissors beats Paper!"
+        document.getElementById('roundDescription').innerHTML = "Scissors beats Paper!";
     }
     
     upgradePoints();
@@ -79,16 +79,16 @@ document.getElementById('scissorsBtn').onclick = function () {
     if (aiChoice() === "rock") {
         console.log("AI WON");
         aiPoints += 1;
-        document.getElementById('roundDescription').innerHTML = "Rock beats Scissors!"
+        document.getElementById('roundDescription').innerHTML = "Rock beats Scissors!";
     }
     else if (aiChoice() === "paper") {
         console.log("YOU WON");
         playerPoints += 1;
-        document.getElementById('roundDescription').innerHTML = "Scissors beats Paper!"
+        document.getElementById('roundDescription').innerHTML = "Scissors beats Paper!";
     }
     else {
         console.log("TIE");
-        document.getElementById('roundDescription').innerHTML = "Tie!"
+        document.getElementById('roundDescription').innerHTML = "Tie!";
     }
     
     upgradePoints();

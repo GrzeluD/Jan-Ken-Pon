@@ -43,8 +43,7 @@ document.getElementById('rockBtn').onclick = function () {
         document.getElementById('roundDescription').innerHTML = "Rock beats Scissors!"
     }
     
-    document.getElementById('playerPoints').innerHTML = playerPoints;
-    document.getElementById('aiPoints').innerHTML = aiPoints;
+    upgradePoints();
     declareWinner();
 }
 // after click on paper button
@@ -68,8 +67,7 @@ document.getElementById('paperBtn').onclick = function () {
         document.getElementById('roundDescription').innerHTML = "Scissors beats Paper!"
     }
     
-    document.getElementById('playerPoints').innerHTML = playerPoints;
-    document.getElementById('aiPoints').innerHTML = aiPoints;
+    upgradePoints();
     declareWinner();
 }
 // after click on scissors button
@@ -93,13 +91,12 @@ document.getElementById('scissorsBtn').onclick = function () {
         document.getElementById('roundDescription').innerHTML = "Tie!"
     }
     
-    document.getElementById('playerPoints').innerHTML = playerPoints;
-    document.getElementById('aiPoints').innerHTML = aiPoints;
+    upgradePoints();
     declareWinner();
 }
 
 
-// function that declare a winner
+// function that declare a winner after 
 function declareWinner() {
     if (playerPoints === 5) {
         alert("Congratulations! You won with the Computer!");
@@ -112,4 +109,9 @@ function declareWinner() {
         playerPoints = 0;
         aiPoints = 0;
     }
+}
+
+function upgradePoints() {
+    document.getElementById('playerPoints').innerHTML = playerPoints;
+    document.getElementById('aiPoints').innerHTML = aiPoints;
 }

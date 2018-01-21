@@ -37,7 +37,6 @@ function aiChoice() {
 // after click on rock button
 function rockBtn() {
     playerDiv.innerHTML = rockImg;
-    aiDiv.innerHTML = "";
     description.innerHTML = "";
     
     aiChoice();
@@ -63,7 +62,6 @@ function rockBtn() {
 // after click on paper button
 function paperBtn () {
     playerDiv.innerHTML = paperImg;
-    aiDiv.innerHTML = "";
     description.innerHTML = "";
     
     aiChoice();
@@ -91,7 +89,6 @@ function paperBtn () {
 // after click on scissors button
 function scissorsBtn () {
     playerDiv.innerHTML = scissorsImg;
-    aiDiv.innerHTML = "";
     description.innerHTML = "";
     
     aiChoice();

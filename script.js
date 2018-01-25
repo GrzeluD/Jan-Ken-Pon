@@ -2,16 +2,18 @@
 let playerPoints = 0;
 let aiPoints = 0;
 
-//DOM elements variables
-const aiDiv = document.getElementById('aiImg');
-const playerDiv = document.getElementById('playerImg');
+// images into variables
 const rockImg = "<img src='assets/rock.png' alt='rock'>";
 const paperImg = "<img src='assets/paper.png' alt='paper'>"
 const scissorsImg = "<img src='assets/scissors.png' alt='scissors'>";
+
+//DOM elements variables
+const aiDiv = document.getElementById('aiImg');
+const playerDiv = document.getElementById('playerImg');
 const description = document.getElementById('roundDescription');
 const buttons = document.querySelectorAll("button");
 
-// computers move returning random value and load image on page 
+// computer's move, returning random value and load image on page 
 function aiChoice() {
     let aiWeapons = ['r', 'p', 's'];
     let aiPlay = aiWeapons[Math.floor(Math.random() * aiWeapons.length)];
@@ -35,7 +37,7 @@ function aiChoice() {
 
 }
 // game logic with player action after button click
-// after click on rock button
+
 function round() {
     
     if (this.name === 'rock') {
@@ -116,7 +118,8 @@ function round() {
         declareWinner();
     }
 }
-    
+ 
+// iterate through buttons and add  on click function
 buttons.forEach(button => button.addEventListener('click', round));
 
 
@@ -135,6 +138,7 @@ function declareWinner() {
         aiPoints = 0;
     }
 }
+
 
 function upgradePoints() {
     document.getElementById('playerPoints').textContent = playerPoints;

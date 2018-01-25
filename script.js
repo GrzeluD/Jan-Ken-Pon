@@ -9,6 +9,7 @@ const rockImg = "<img src='assets/rock.png' alt='rock'>";
 const paperImg = "<img src='assets/paper.png' alt='paper'>"
 const scissorsImg = "<img src='assets/scissors.png' alt='scissors'>";
 const description = document.getElementById('roundDescription');
+const buttons = document.querySelectorAll("button");
 
 // computers move returning random value and load image on page 
 function aiChoice() {
@@ -23,114 +24,119 @@ function aiChoice() {
     
         case 'p':
             aiDiv.innerHTML = paperImg;
-            return "paper";
+            return 'paper';
             break;
     
         default :
             aiDiv.innerHTML = scissorsImg;
-            return "scissors";
-            break;
+            return 'scissors';
+            
     }
 
 }
 // game logic with player action after button click
 // after click on rock button
-function rockBtn() {
-    playerDiv.innerHTML = rockImg;
-    description.innerHTML = "";
+function round() {
     
-    aiChoice();
+    if (this.name === 'rock') {
+        playerDiv.innerHTML = rockImg;
+        description.textContent = '';
 
-    switch (aiChoice()) {
-        case "rock":
-            description.innerHTML = "Tie!"
-            break;
-        case "paper":
-            aiPoints += 1;
-            description.innerHTML = "Paper beats Rock!";
-            break;
+        aiChoice()
+        
+        switch (aiChoice()) {
+            case 'rock':
+                description.textContent = 'Tie!';
+                break;
+
+            case 'paper':
+                aiPoints += 1;
+                description.textContent = 'Paper beats Rock!';
+                break;
     
-        default:
-            playerPoints += 1;
-            description.innerHTML = "Rock beats Scissors!";
-            break;
-    }
+            default:
+                playerPoints += 1;
+                description.textContent = 'Rock beats Scissors!';
+        }
     
-    upgradePoints();
-    declareWinner();
-}
-// after click on paper button
-function paperBtn () {
-    playerDiv.innerHTML = paperImg;
-    description.innerHTML = "";
+        upgradePoints();
+        declareWinner(); 
+    } 
     
-    aiChoice();
+    else if (this.name === 'paper'){
+        playerDiv.innerHTML = paperImg;
+        description.textContent = '';
     
-    switch (aiChoice()) {
+        aiChoice();
+    
+        switch (aiChoice()) {
             
-        case "rock":
-            playerPoints += 1;
-            description.innerHTML = "Paper beats Rock!";
-            break;
+            case 'rock':
+                playerPoints += 1;
+                description.textContent = 'Paper beats Rock!';
+                break;
     
-        case "paper": 
-            description.innerHTML = "Tie!"
-            break;
+            case 'paper': 
+                description.textContent = 'Tie!';
+                break;
     
-        default:
-            aiPoints += 1;
-            description.innerHTML = "Scissors beats Paper!";
-            break;
-    }
+            default:
+                aiPoints += 1;
+                description.textContent = 'Scissors beats Paper!';
+        }
     
-    upgradePoints();
-    declareWinner();
-}
-// after click on scissors button
-function scissorsBtn () {
-    playerDiv.innerHTML = scissorsImg;
-    description.innerHTML = "";
+        upgradePoints();
+        declareWinner();
+        
+    } 
+    else if (this.name === 'scissors') {
+        playerDiv.innerHTML = scissorsImg;
+        description.textContent = '';
+
+        aiChoice();
     
-    aiChoice();
-    
-    switch (aiChoice()) {
+        switch (aiChoice()) {
             
-        case "rock": 
-            aiPoints += 1;
-            description.innerHTML = "Rock beats Scissors!";
-            break;
+            case 'rock': 
+                aiPoints += 1;
+                description.textContent = 'Rock beats Scissors!';
+                break;
     
-        case "paper":
-            playerPoints += 1;
-            description.innerHTML = "Scissors beats Paper!";
-            break;
+            case 'paper':
+                playerPoints += 1;
+                description.textContent = 'Scissors beats Paper!';
+                break;
     
-        default:
-            description.innerHTML = "Tie!";
-            break;
+            default:
+                description.textContent = 'Tie!';
+
+        }
+    
+        upgradePoints();
+        declareWinner();
     }
-    
-    upgradePoints();
-    declareWinner();
 }
+    
+buttons.forEach(button => button.addEventListener('click', round));
+
 
 
 // function that declare a winner after 
 function declareWinner() {
     if (playerPoints === 5) {
-        alert("Congratulations! You won with the Computer!");
+        alert('Congratulations! You won with the Computer!');
         playerPoints = 0;
         aiPoints = 0;
     }
     
     if (aiPoints === 5) {
-        alert("Computer won! Try again!");
+        alert('Computer won! Try again!');
         playerPoints = 0;
         aiPoints = 0;
     }
 }
 
 function upgradePoints() {
-    document.getElementById('playerPoints').innerHTML = playerPoints;
-    document.getElementById('aiPoints').innerHTML = aiPoints;
+    document.getElementById('playerPoints').textContent = playerPoints;
+    document.getElementById('aiPoints').textContent = aiPoints;
 }

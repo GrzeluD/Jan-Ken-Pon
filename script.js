@@ -60,9 +60,6 @@ function round() {
                 playerPoints += 1;
                 description.textContent = 'Rock beats Scissors!';
         }
-    
-        upgradePoints();
-        declareWinner(); 
     } 
     
     else if (this.name === 'paper'){
@@ -86,11 +83,8 @@ function round() {
                 aiPoints += 1;
                 description.textContent = 'Scissors beats Paper!';
         }
-    
-        upgradePoints();
-        declareWinner();
-        
     } 
+    
     else if (this.name === 'scissors') {
         playerDiv.innerHTML = scissorsImg;
         description.textContent = '';
@@ -113,10 +107,10 @@ function round() {
                 description.textContent = 'Tie!';
 
         }
-    
-        upgradePoints();
-        declareWinner();
     }
+    
+    upgradePoints();
+    declareWinner(); 
 }
  
 // iterate through buttons and add  on click function

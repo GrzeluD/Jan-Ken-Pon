@@ -40,12 +40,13 @@ function aiChoice() {
 
 function round() {
     
+    description.textContent = '';
+
+    aiChoice();
+    
     if (this.name === 'rock') {
         playerDiv.innerHTML = rockImg;
-        description.textContent = '';
 
-        aiChoice()
-        
         switch (aiChoice()) {
             case 'rock':
                 description.textContent = 'Tie!';
@@ -64,9 +65,6 @@ function round() {
     
     else if (this.name === 'paper'){
         playerDiv.innerHTML = paperImg;
-        description.textContent = '';
-    
-        aiChoice();
     
         switch (aiChoice()) {
             
@@ -87,9 +85,6 @@ function round() {
     
     else if (this.name === 'scissors') {
         playerDiv.innerHTML = scissorsImg;
-        description.textContent = '';
-
-        aiChoice();
     
         switch (aiChoice()) {
             
